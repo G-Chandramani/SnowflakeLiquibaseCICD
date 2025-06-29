@@ -37,7 +37,7 @@ jobs:
         - name: Deploy Data stage Objects
           uses: docker://liquibase/liquibase:latest
           with:
-            args: --url=jdbc:snowflake://safzqpd-jh55338.snowflakecomputing.com/?db=DATA_TESTING_FRAMEWORK&schema=FRAMEWORK&role=IT_DATA_ENGINEERS&warehouse=CI_CD_PROCESSING --changeLogFile=env/dev/databases/DATA_TESTING_FRAMEWORK/FRAMEWORK/liquidbase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=FRAMEWORK --log-level=INFO update
+            args: --url=jdbc:snowflake://gtbexhr.snowflakecomputing.com/?db=DATA_TESTING_FRAMEWORK&schema=FRAMEWORK&role=IT_DATA_ENGINEERS&warehouse=CI_CD_PROCESSING --changeLogFile=env/dev/databases/DATA_TESTING_FRAMEWORK/FRAMEWORK/liquidbase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=FRAMEWORK --log-level=INFO update
 
 
 

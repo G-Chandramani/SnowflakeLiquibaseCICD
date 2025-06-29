@@ -37,7 +37,7 @@ jobs:
         # - name: Liqubase Status Check
         #   uses: docker://liquibase/liquibase:latest
         #   with:
-        #    args: --url=jdbc:snowflake://slcotvi-ps17753.snowflakecomputing.com//?db=DATA_TESTING_FRAMEWORK&schema=FRAMEWORK1&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/DATA_TESTING_FRAMEWORK/FRAMEWORK/liquidbase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=FRAMEWORK1 --log-level=INFO status
+        #    args: --url=jdbc:snowflake://gtbexhr.snowflakecomputing.com//?db=DATA_TESTING_FRAMEWORK&schema=FRAMEWORK1&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/DATA_TESTING_FRAMEWORK/FRAMEWORK/liquidbase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=FRAMEWORK1 --log-level=INFO status
         
 
         #DATA_TESTING_FRAMEWORK database objects
@@ -45,14 +45,14 @@ jobs:
         - name: Deploy for data_testing_framework
           uses: docker://liquibase/liquibase:latest
           with:
-            args: --url=jdbc:snowflake://slcotvi-ps17753.snowflakecomputing.com/?db=DATA_TESTING_FRAMEWORK&schema=FRAMEWORK&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/DATA_TESTING_FRAMEWORK/FRAMEWORK/liquidbase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=FRAMEWORK --log-level=DEBUG update
+            args: --url=jdbc:snowflake://gtbexhr.snowflakecomputing.com/?db=DATA_TESTING_FRAMEWORK&schema=FRAMEWORK&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/DATA_TESTING_FRAMEWORK/FRAMEWORK/liquidbase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=FRAMEWORK --log-level=DEBUG update
        
         # # DATA_STAGING database objects
         # # Run a set of SQL deployment scripts for the DATA_STAGING database GRADESTAR_RAW schema
         - name: Deploy for data_staging
           uses: docker://liquibase/liquibase:latest
           with:
-            args: --url=jdbc:snowflake://slcotvi-ps17753.snowflakecomputing.com/?db=DATA_STAGING&schema=GRADESTAR_RAW&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/DATA_STAGING/GRADESTAR_RAW/liquibase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=GRADESTAR_RAW --log-level=DEBUG update
+            args: --url=jdbc:snowflake://gtbexhr.snowflakecomputing.com/?db=DATA_STAGING&schema=GRADESTAR_RAW&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/DATA_STAGING/GRADESTAR_RAW/liquibase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=GRADESTAR_RAW --log-level=DEBUG update
 
             
         # # DATA_STAGING database objects
@@ -60,58 +60,58 @@ jobs:
         - name: Deploy for GRADESTAR_STAGE
           uses: docker://liquibase/liquibase:latest
           with:
-            args: --url=jdbc:snowflake://slcotvi-ps17753.snowflakecomputing.com/?db=DATA_STAGING&schema=GRADESTAR_STAGE&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/DATA_STAGING/GRADESTAR_STAGE/liquibase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=GRADESTAR_STAGE --log-level=DEBUG update
+            args: --url=jdbc:snowflake://gtbexhr.snowflakecomputing.com/?db=DATA_STAGING&schema=GRADESTAR_STAGE&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/DATA_STAGING/GRADESTAR_STAGE/liquibase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=GRADESTAR_STAGE --log-level=DEBUG update
 
         
         # # Run a set of SQL deployment scripts for the EDA_COMMON_UTILITIES database Error_Management schema
         - name: Deploy for EDA_Utilities
           uses: docker://liquibase/liquibase:latest
           with:
-            args: --url=jdbc:snowflake://slcotvi-ps17753.snowflakecomputing.com/?db=EDA_COMMON_UTILITIES&schema=ERROR_MANAGEMENT&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/EDA_COMMON_UTILITIES/ERROR_MANAGEMENT/liquibase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=ERROR_MANAGEMENT --log-level=DEBUG update
+            args: --url=jdbc:snowflake://gtbexhr.snowflakecomputing.com/?db=EDA_COMMON_UTILITIES&schema=ERROR_MANAGEMENT&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/EDA_COMMON_UTILITIES/ERROR_MANAGEMENT/liquibase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=ERROR_MANAGEMENT --log-level=DEBUG update
             
 
         # # Run a set of SQL deployment scripts for the EDA_COMMON_UTILITIES database GENERAL_UTILITIES schema
         - name: Deploy for EDA_GENERAL_UTILITIES
           uses: docker://liquibase/liquibase:latest
           with:
-            args: --url=jdbc:snowflake://slcotvi-ps17753.snowflakecomputing.com/?db=EDA_COMMON_UTILITIES&schema=GENERAL_UTILITIES&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/EDA_COMMON_UTILITIES/GENERAL_UTILITIES/liquibase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=GENERAL_UTILITIES --log-level=DEBUG update
+            args: --url=jdbc:snowflake://gtbexhr.snowflakecomputing.com/?db=EDA_COMMON_UTILITIES&schema=GENERAL_UTILITIES&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/EDA_COMMON_UTILITIES/GENERAL_UTILITIES/liquibase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=GENERAL_UTILITIES --log-level=DEBUG update
 
             
         # # Run a set of SQL deployment scripts for the EDA_COMMON_UTILITIES database RAW_PROCESSING schema
         - name: Deploy for EDA_RAW_PROCESSING
           uses: docker://liquibase/liquibase:latest
           with:
-            args: --url=jdbc:snowflake://slcotvi-ps17753.snowflakecomputing.com/?db=EDA_COMMON_UTILITIES&schema=RAW_PROCESSING&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/EDA_COMMON_UTILITIES/RAW_PROCESSING/liquibase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=RAW_PROCESSING --log-level=DEBUG update
+            args: --url=jdbc:snowflake://gtbexhr.snowflakecomputing.com/?db=EDA_COMMON_UTILITIES&schema=RAW_PROCESSING&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/EDA_COMMON_UTILITIES/RAW_PROCESSING/liquibase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=RAW_PROCESSING --log-level=DEBUG update
 
             
         # Run a set of SQL deployment scripts for the EDA_COMMON_UTILITIES database STAGE_PROCESSING schema
         - name: Deploy for EDA_STAGE_PROCESSING
           uses: docker://liquibase/liquibase:latest
           with:
-            args: --url=jdbc:snowflake://slcotvi-ps17753.snowflakecomputing.com/?db=EDA_COMMON_UTILITIES&schema=STAGE_PROCESSING&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/EDA_COMMON_UTILITIES/STAGE_PROCESSING/liquibase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=STAGE_PROCESSING --log-level=DEBUG update
+            args: --url=jdbc:snowflake://gtbexhr.snowflakecomputing.com/?db=EDA_COMMON_UTILITIES&schema=STAGE_PROCESSING&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/EDA_COMMON_UTILITIES/STAGE_PROCESSING/liquibase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=STAGE_PROCESSING --log-level=DEBUG update
 
         # # Run a set of SQL deployment scripts for the STAGE_SAP database RAW schema
         - name: Deploy for DB -> STAGE_SAP & SCHEMA -> RAW 
           uses: docker://liquibase/liquibase:latest
           with:
-           args: --url=jdbc:snowflake://slcotvi-ps17753.snowflakecomputing.com/?db=STAGE_SAP&schema=RAW&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/STAGE_SAP/RAW/liquibase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=RAW --log-level=DEBUG update
+           args: --url=jdbc:snowflake://gtbexhr.snowflakecomputing.com/?db=STAGE_SAP&schema=RAW&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/STAGE_SAP/RAW/liquibase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=RAW --log-level=DEBUG update
 
            
         # # Run a set of SQL deployment scripts for the STAGE_SAP database STAGE STAGE
         - name: Deploy for DB -> STAGE_SAP & SCHEMA -> STAGE 
           uses: docker://liquibase/liquibase:latest
           with:
-           args: --url=jdbc:snowflake://slcotvi-ps17753.snowflakecomputing.com/?db=STAGE_SAP&schema=STAGE&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/STAGE_SAP/STAGE/liquibase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=STAGE --log-level=DEBUG update
+           args: --url=jdbc:snowflake://gtbexhr.snowflakecomputing.com/?db=STAGE_SAP&schema=STAGE&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/STAGE_SAP/STAGE/liquibase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=STAGE --log-level=DEBUG update
 
         # # Run a set of SQL deployment scripts for the STAGE_SAP database SUPPLY_CHAIN STAGE
         # - name: Deploy for DB -> STAGE_SAP & SCHEMA -> SUPPLY_CHAIN 
         #   uses: docker://liquibase/liquibase:latest
         #   with:
-        #    args: --url=jdbc:snowflake://slcotvi-ps17753.snowflakecomputing.com/?db=STAGE_SAP&schema=SUPPLY_CHAIN&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/STAGE_SAP/SUPPLY_CHAIN/liquibase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=SUPPLY_CHAIN --log-level=DEBUG update        
+        #    args: --url=jdbc:snowflake://gtbexhr.snowflakecomputing.com/?db=STAGE_SAP&schema=SUPPLY_CHAIN&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/STAGE_SAP/SUPPLY_CHAIN/liquibase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=SUPPLY_CHAIN --log-level=DEBUG update        
 
            
         # # Run a set of SQL deployment scripts for the STAGE_EDI_HQ database RAW STAGE
         # - name: Deploy for DB -> STAGE_EDI_HQ & SCHEMA -> RAW 
         #   uses: docker://liquibase/liquibase:latest
         #   with:
-        #    args: --url=jdbc:snowflake://slcotvi-ps17753.snowflakecomputing.com/?db=STAGE_EDI_HQ&schema=RAW&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/STAGE_EDI_HQ/RAW/liquibase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=STAGE_EDI_HQ --log-level=DEBUG update        
+        #    args: --url=jdbc:snowflake://gtbexhr.snowflakecomputing.com/?db=STAGE_EDI_HQ&schema=RAW&role=DATA_ENGINEER&warehouse=DATA_ENGINEER_WH --changeLogFile=/env/dev/databases/STAGE_EDI_HQ/RAW/liquibase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=STAGE_EDI_HQ --log-level=DEBUG update        
