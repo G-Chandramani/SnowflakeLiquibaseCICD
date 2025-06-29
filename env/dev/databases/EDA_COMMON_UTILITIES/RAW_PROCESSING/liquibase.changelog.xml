@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="db.changelog-master.xml" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!-- example: <include file="/env/dev/databases/data_analytics/tr_0000.sql"/>-->
+    <include file="/env/dev/databases/EDA_COMMON_UTILITIES/RAW_PROCESSING/Schema/RAW_PROCESSING_1.sql"/>
+    <include file="/env/dev/databases/EDA_COMMON_UTILITIES/RAW_PROCESSING/Procedures/CSV_AND_TABLE_COLUMNS_MATCH_1.sql"/>
+    <!--<include file="/env/dev/databases/EDA_COMMON_UTILITIES/RAW_PROCESSING/Tables/<table_name>_1.sql"/>-->
+    <!--<include file="version/db.changelog-1.1.xml" relativeToChangelogFile="true"/>-->
+</databaseChangeLog>
