@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="db.changelog-master.xml" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <property name="SAPDatabaseName" value="STAGE_SAP"/>
+    <property name="UtilitiesDatabaseName" value="EDA_COMMON_UTILITIES"/>
+    <!-- example: <include file="/env/dev/databases/data_analytics/tr_0000.sql"/>-->
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Schema/RAW_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/File_Formats/CSV_COLUMN_DISCOVERY_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/File_Formats/CSV_FF_TEST_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/File_Formats/SAP_INGRESS_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/File_Formats/SAP_INGRESS_METADATA_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/File_Formats/SAP_INGRESS_METADATA_UNCOMPRESSED_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Stages/S4Q_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Stages/S4R_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Stages/S4U_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Tables/METADATA_DATATYPE_REFERENCE_TBL_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Tables/METADATA_OVERRIDE_TBL_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Tables/METADATA_RICEF_REFERENCE_TBL_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Tables/METADATA_STORE_TBL_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Tables/ZZINGESTION_SESSION_LOG_1.sql"/>
+    <!-- <include file="/env/dev/databases/STAGE_SAP/RAW/Functions/CORRECT_DATE_VALUE_1.sql"/> -->
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Procedures/INGEST_METADATA_FILE_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Procedures/INGESTION_BASE_LOGIC_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Procedures/INGESTION_LAUNCHER_FOR_ORCHESTRATOR_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Procedures/INGESTION_MANUAL_LAUNCHER_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Procedures/PROCESS_SAP_TABLE_CREATE_DDL_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Procedures/PROCESS_SAP_TABLE_INGEST_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Procedures/PROCESS_STAGE_TABLE_UPDATE_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Procedures/PROCESS_STAGING_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Procedures/PROCESS_TABLE_OPERATION_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Procedures/STAGING_BASE_LOGIC_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Procedures/SUBMIT_LOG_ERRORS_1.sql"/>
+    <!-- <include file="/env/dev/databases/STAGE_SAP/RAW/Views/METADATA_DDL_VW_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Views/METADATA_MATCH_PATTERNS_VW_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Views/METADATA_OVERRIDE_VW_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Views/METADATA_SUMMARY_VW_1.sql"/> -->
+    <!-- IMPORTANT: DROP_ALL_SAP_TABLES_1 and TRUNCATE_ALL_SAP_TABLES_1 are not to be promoted to PROD -->
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Procedures/DROP_ALL_SAP_TABLES_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/RAW/Procedures/TRUNCATE_ALL_SAP_TABLES_1.sql"/>
+    <!--<include file="version/db.changelog-1.1.xml" relativeToChangelogFile="true"/>-->
+    <!-- <include file="/env/dev/databases/STAGE_SAP/RAW/Functions/CORRECT_DATE_VALUE_1.sql"/> -->
+</databaseChangeLog>

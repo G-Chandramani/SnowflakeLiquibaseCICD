@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="db.changelog-master.xml" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <property name="SAPDatabaseName" value="STAGE_SAP"/>
+    <property name="EDIHQDatabaseName" value="STAGE_EDI_HQ"/>
+    <property name="UnstructuredDatabaseName" value="DATA_UNSTRUCTURED"/>
+    <!-- example: <include file="/env/dev/databases/data_analytics/tr_0000.sql"/>-->
+    <include file="/env/dev/databases/STAGE_SAP/SUPPLY_CHAIN/Schema/SUPPLY_CHAIN_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/SUPPLY_CHAIN/Tables/EXCEPTIONS_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/SUPPLY_CHAIN/Tables/JOB_LOG_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/SUPPLY_CHAIN/Tables/YED_SALES_WITH_PRICING_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/SUPPLY_CHAIN/Views/YED_SALES_MV_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/SUPPLY_CHAIN/Views/SALEDAY_TBL_MV_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/SUPPLY_CHAIN/Views/YED_SALES_EV_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/SUPPLY_CHAIN/Views/PRICING_WITH_HISTORY_EV_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/SUPPLY_CHAIN/Views/YED_SALES_WITH_PRICING_EV_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/SUPPLY_CHAIN/Views/YED_SALES_WITH_COND_CONTRACT_EV_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/SUPPLY_CHAIN/Views/MATERIAL_PROD_HIERARCHY_EV_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/SUPPLY_CHAIN/Views/REDISTRIBUTED_SALES_EV_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/SUPPLY_CHAIN/Views/PBI_COND_CONTRACT_DTL_EV_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/SUPPLY_CHAIN/Procedures/SP_YED_SALES_WITH_PRICING_TBL_LOAD_1.sql"/>
+    <!--<include file="version/db.changelog-1.1.xml" relativeToChangelogFile="true"/>-->
+</databaseChangeLog>

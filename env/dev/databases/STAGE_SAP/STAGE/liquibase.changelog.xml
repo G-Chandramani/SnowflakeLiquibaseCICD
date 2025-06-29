@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="db.changelog-master.xml" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!-- example: <include file="/env/dev/databases/data_analytics/tr_0000.sql"/>-->
+    <include file="/env/dev/databases/STAGE_SAP/STAGE/Schema/STAGE_1.sql"/>
+    <!-- IMPORTANT: DROP_ALL_SAP_TABLES_1 and TRUNCATE_ALL_SAP_TABLES_1 are not to be promoted to PROD -->
+    <include file="/env/dev/databases/STAGE_SAP/STAGE/Procedures/DROP_ALL_SAP_TABLES_1.sql"/>
+    <include file="/env/dev/databases/STAGE_SAP/STAGE/Procedures/TRUNCATE_ALL_SAP_TABLES_1.sql"/>
+    <!--<include file="version/db.changelog-1.1.xml" relativeToChangelogFile="true"/>-->
+</databaseChangeLog>
