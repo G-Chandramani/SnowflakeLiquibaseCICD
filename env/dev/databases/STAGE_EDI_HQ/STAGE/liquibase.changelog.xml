@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="db.changelog-master.xml" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <property name="EDIHQDatabaseName" value="STAGE_EDI_HQ"/>
+    <property name="EDACommonUtilDatabaseName" value="EDA_COMMON_UTILITIES"/>
+    <!-- example: <include file="/env/dev/databases/data_analytics/tr_0000.sql"/>-->
+    <include file="/env/dev/databases/STAGE_EDI_HQ/STAGE/Schema/STAGE_1.sql"/> 
+    <include file="/env/dev/databases/STAGE_EDI_HQ/STAGE/Tables/YED_SALES_1.sql"/>
+    <include file="/env/dev/databases/STAGE_EDI_HQ/STAGE/Procedures/INGEST_YED_SALES_1.sql"/>
+    <include file="/env/dev/databases/STAGE_EDI_HQ/STAGE/Tables/YED_SALES_TEMP_1.sql"/>
+    <!--<include file="version/db.changelog-1.1.xml" relativeToChangelogFile="true"/>-->   
+</databaseChangeLog>
