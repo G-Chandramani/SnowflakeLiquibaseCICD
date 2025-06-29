@@ -1,0 +1,44 @@
+# This is a database script deployment pipeline. Any database changes, DDL or DML can be populated through this
+name: sf_dev_deploy
+
+#controls when the workflow will run
+on:
+# Triggers the workflow on push or pull request events but only for the main branch
+#NOTE : changed path to fake so that it doesn't triigger on check in to dav... may eventually change it back  
+  push:
+    branches: [ main ]
+    paths: '**/dev/databases/**'
+
+  #pull_request;
+  #branchs : [main]
+
+  # Allows you to run this workflow manually from the Actyions tab. This needs to be commented if needs to be triggered automatically
+  workflow_dispatch:
+
+  # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow ccontains a single job called build
+    sfJobDockerCLI:
+  # the type fo runner that the job will run on
+      runs-on: ubuntu-latest
+      environment:
+        name: dev
+        # Steps represent a sequence of tasks that will be executed as part of the job
+        #Optimize this stepp by using folder filters utiltiy dorny/paths-fiolter
+        #https://github.com/dorny/paths-filter#example
+      
+      steps:
+      # Checks out your repository under $GITHUB_WORKSPACE, so your job can accesss it
+        - uses: actions/checkout@v3
+
+        # DATA_TESTING_FRAMEWORK databse objects
+        #Run a set of SQL deployment scripts for the DATA_TESTING_FRAMEWORK databse FRAMEWORK schema
+        
+        - name: Deploy Data stage Objects
+          uses: docker://liquibase/liquibase:latest
+          with:
+            args: --url=jdbc:snowflake://safzqpd-jh55338.snowflakecomputing.com/?db=DATA_TESTING_FRAMEWORK&schema=FRAMEWORK&role=IT_DATA_ENGINEERS&warehouse=CI_CD_PROCESSING --changeLogFile=env/dev/databases/DATA_TESTING_FRAMEWORK/FRAMEWORK/liquidbase.changelog.xml --username=${{secrets.CI_USERNAME}} --password=${{secrets.CI_PASSWORD}} --liquibase-schema-name=LIQUIBASE --default-schema-name=FRAMEWORK --log-level=INFO update
+
+
+
+  
