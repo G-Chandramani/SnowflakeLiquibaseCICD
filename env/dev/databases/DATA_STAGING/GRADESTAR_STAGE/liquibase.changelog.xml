@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="db.changelog-master.xml" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <property name="STAGINGDatabaseName" value="DATA_STAGING"/>
+    <property name="UtilitiesDatabaseName" value="EDA_COMMON_UTILITIES"/>
+    <!-- example: <include file="/env/tst/databases/data_analytics/tr_0000.sql"/>-->
+    <include file="/env/dev/databases/DATA_STAGING/GRADESTAR_STAGE/Schema/GRADESTAR_STAGE_1.SQL"/>
+    <include file="/env/dev/databases/DATA_STAGING/GRADESTAR_STAGE/Tables/APQCDETAILS_TBL_1.sql"/>
+    <include file="/env/dev/databases/DATA_STAGING/GRADESTAR_STAGE/Tables/APQCHEADERS_TBL_1.sql"/>
+    <include file="/env/dev/databases/DATA_STAGING/GRADESTAR_STAGE/Tables/APQCPICTURES_TBL_1.sql"/>
+    <!--<include file="version/db.changelog-1.1.xml" relativeToChangelogFile="true"/>-->
+</databaseChangeLog> 

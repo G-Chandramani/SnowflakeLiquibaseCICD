@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog logicalFilePath="db.changelog-master.xml" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <!-- <property name="STAGINGDatabaseName" value="DATA_STAGING_TEST"/>
+    <property name="UtilitiesDatabaseName" value="EDA_COMMON_UTILITIES"/>
+    <property name="ProcessingWH" value="STAGE_PROCESSING_DEV_TEST_WH"/> -->
+    
+
+    <!-- example: <include file="/env/dev/databases/data_analytics/tr_0000.sql"/>-->
+    <include file="/env/dev/databases/DATA_STAGING/GRADESTAR_RAW/SCHEMA/GRADESTAR_RAW.sql"/>
+    <include file="/env/dev/databases/DATA_STAGING/GRADESTAR_RAW/FILE_FORMAT/GRADESTAR_S3_FF_1.sql"/>
+    <include file="/env/dev/databases/DATA_STAGING/GRADESTAR_RAW/TABLES/APQCDETAILS_TBL_1.sql"/>
+    <include file="/env/dev/databases/DATA_STAGING/GRADESTAR_RAW/TABLES/APQCHEADERS_TBL_1.sql"/>
+    <include file="/env/dev/databases/DATA_STAGING/GRADESTAR_RAW/TABLES/APQCPICTURES_TBL_1.sql"/>
+    <include file="/env/dev/databases/DATA_STAGING/GRADESTAR_RAW/STAGES/GRADESTAR_APQCDETAILS_S3_STAGE_1.sql"/>
+    <include file="/env/dev/databases/DATA_STAGING/GRADESTAR_RAW/STAGES/GRADESTAR_APQCHEADERS_S3_STAGE_1.sql"/>
+    <include file="/env/dev/databases/DATA_STAGING/GRADESTAR_RAW/STAGES/GRADESTAR_APQCPICTURES_S3_STAGE_1.sql"/>
+    <include file="/env/dev/databases/DATA_STAGING/GRADESTAR_RAW/PROCEDURES/DELETE_GREATERTHAN_TWO_YRS_1.sql"/>
+    <include file="/env/dev/databases/DATA_STAGING/GRADESTAR_RAW/PROCEDURES/GRADESTAR_APQCDETAILS_COPYINTO_1.sql"/>
+    <include file="/env/dev/databases/DATA_STAGING/GRADESTAR_RAW/PROCEDURES/GRADESTAR_APQCDETAILS_ORCHESTRATION_1.sql"/>
+    <include file="/env/dev/databases/DATA_STAGING/GRADESTAR_RAW/PROCEDURES/GRADESTAR_APQCHEADERS_COPYINTO_1.sql"/>
+    <include file="/env/dev/databases/DATA_STAGING/GRADESTAR_RAW/PROCEDURES/GRADESTAR_APQCHEADERS_ORCHESTRATION_1.sql"/>
+    <include file="/env/dev/databases/DATA_STAGING/GRADESTAR_RAW/PROCEDURES/GRADESTAR_APQCPICTURES_COPYINTO_1.sql"/>
+    <include file="/env/dev/databases/DATA_STAGING/GRADESTAR_RAW/PROCEDURES/GRADESTAR_APQCPICTURES_ORCHESTRATION_1.sql"/>
+    <include file="/env/dev/databases/DATA_STAGING/GRADESTAR_RAW/Tasks/GRADESTAR_INGEST_TASK_1.sql"/>
+    <!--<include file="version/db.changelog-1.1.xml" relativeToChangelogFile="true"/>-->
+</databaseChangeLog>

@@ -1,0 +1,25 @@
+--liquibase formatted sql
+				
+--changeset CHANDRAMANI:DELETE_GREATERTHAN_TWO_YRS_1 runOnChange:true failOnError:true endDelimiter:""
+--comment create the stage table filtering procedure for GRADESTAR
+CREATE OR REPLACE PROCEDURE DELETE_GREATERTHAN_TWO_YRS(STAGE_DB VARCHAR(16777216), STAGE_SCHEMA VARCHAR(16777216), STAGE_TBL VARCHAR(16777216), DATE_COLUMN VARCHAR(16777216))
+RETURNS VARCHAR(16777216)
+LANGUAGE SQL
+EXECUTE AS CALLER
+AS
+DECLARE 
+    TWO_YRS_AGO TIMESTAMP_NTZ(9);
+    COMMAND VARCHAR;
+BEGIN
+    TWO_YRS_AGO := TIMESTAMPADD(YEAR, -2, CURRENT_TIMESTAMP());
+    LET STAGE_TBL_PATH VARCHAR := concat('"', :STAGE_DB, '"."', :STAGE_SCHEMA, '"."', :STAGE_TBL, '"');
+
+    COMMAND := concat(
+            'DELETE FROM ', STAGE_TBL_PATH, '\n',
+            'WHERE ', :DATE_COLUMN, ' < \'', TWO_YRS_AGO, '\';'
+        );
+
+    EXECUTE IMMEDIATE (:COMMAND);
+
+    RETURN 'deletion has completed';
+END;
